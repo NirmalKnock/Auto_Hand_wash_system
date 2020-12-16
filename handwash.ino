@@ -31,9 +31,12 @@ void loop() {
   Serial.print("Distance: ");
   Serial.println(distance);
   delay(500);
-if(distance<15){//use can increase the distance
+if(distance<15){    //use can increase the distancen   
+  /* Due to the TTL logic of relay and Arduino , I writen  digitalwrite as LOW, if after building your project ,if they works in opposite mode
+  just change digitalWrite as Hign in (if condition ) and Low in else condition.
+  Otherwise skip this comment*/
     digitalWrite(pump,LOW);
-    delay(10000);//You can increase the water timing
+    delay(10000);   //You can increase the water timing
     
   }
   else{
